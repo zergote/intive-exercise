@@ -11,7 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/zergote/intive-exercise.git"
   },
-  "keywords": ["react", "redux", "sagas", "sass"],
+  "keywords": [
+    "react",
+    "redux",
+    "sagas",
+    "sass"
+  ],
   "author": "Christian Yánez",
   "license": "MIT",
   "bugs": {
@@ -51,7 +56,6 @@
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4",
-    "webpack-md5-hash": "0.0.6"
+    "webpack-dev-server": "^3.1.4"
   }
 }

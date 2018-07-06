@@ -38,7 +38,6 @@ module.exports = {
       hash: true,
       template: "./src/index.html",
       filename: "index.html"
-    }),
-    new WebpackMd5Hash()
+    })
   ]
 };
