@@ -1,4 +1,4 @@
-// Config for webpack v4
+//Config for webpack v4
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -6,12 +6,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+/* eslint-disable */
 const devMode = process.env.NODE_ENV !== 'production';
-
+/* eslint-enable */
 module.exports = {
   entry: { main: './src/index.js' },
   output: {
+    /* eslint-disable */
     path: path.resolve(__dirname, 'dist'),
+    /* eslint-enable */
     filename: '[name].[hash].js'
   },
   module: {
