@@ -5,24 +5,28 @@ module.exports = {
         es6: true
     },
     extends: [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "prettier",
-        "plugin:prettier/recommended"
+        'eslint:recommended',
+        'plugin:react/recommended',
+        'prettier',
+        'plugin:prettier/recommended'
     ],
     parserOptions: {
         ecmaFeatures: {
             jsx: true
         },
-        ecmaVersion: 2018,
-        sourceType: "module"
+        ecmaVersion: 2015,
+        sourceType: 'module'
     },
-    plugins: ["react", "prettier"],
+    plugins: ['react', 'prettier'],
     rules: {
-        indent: ["error", 2],
-        "linebreak-style": ["error", "unix"],
-        quotes: ["error", "single"],
-        semi: ["error", "always"],
-        "prettier/prettier": "error"
+        indent: ['error', 2],
+        'linebreak-style': ['error', 'windows'],
+        quotes: ['error', 'single'],
+        semi: ['error', 'always'],
+        'no-unused-vars': [
+            'warn',
+            { vars: 'all', args: 'none', ignoreRestSiblings: false }
+        ],
+        'prettier/prettier': 'error'
     }
 };
