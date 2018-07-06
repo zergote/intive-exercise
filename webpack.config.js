@@ -2,12 +2,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   entry: { main: "./src/index.js" },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[chunkhash].js"
+    filename: "[name].[hash].js"
   },
   module: {
     rules: [
@@ -21,15 +22,16 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
           MiniCssExtractPlugin.loader,
           "css-loader",
+          "postcss-loader",
           "sass-loader"
         ]
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin("dist", {}),
     new MiniCssExtractPlugin({
       filename: "style.[contenthash].css"
     }),

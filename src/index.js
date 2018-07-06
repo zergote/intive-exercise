@@ -1,3 +1,13 @@
 import "./scss/main.scss";
-console.log("hello, world");
-console.log("Hello, world 2");
+import React from "react";
+import { render } from "react-dom";
+
+const App = () => {
+	return (
+		<div>
+			<h3>Hello World</h3>
+		</div>
+	);
+};
+
+render(<App />, document.getElementById("app"));

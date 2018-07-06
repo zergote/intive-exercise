@@ -4,6 +4,8 @@
   "description": "Intive - FDV Exercise",
   "main": "index.js",
   "scripts": {
+    "start:dev":
+      "webpack-dev-server --mode development --open --history-api-fallback",
     "build": "webpack --mode production",
     "dev": "webpack --mode development"
   },
@@ -11,12 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/zergote/intive-exercise.git"
   },
-  "keywords": [
-    "react",
-    "redux",
-    "sagas",
-    "sass"
-  ],
+  "keywords": ["react", "redux", "sagas", "sass"],
   "author": "Christian Yánez",
   "license": "MIT",
   "bugs": {
@@ -25,7 +22,6 @@
   "homepage": "https://github.com/zergote/intive-exercise#readme",
   "dependencies": {
     "babel": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -40,9 +36,11 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
