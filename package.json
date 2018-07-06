@@ -4,8 +4,7 @@
   "description": "Intive - FDV Exercise",
   "main": "index.js",
   "scripts": {
-    "start:dev":
-      "webpack-dev-server --mode development --open --history-api-fallback",
+    "start:dev": "webpack-dev-server --mode development --open --history-api-fallback",
     "build": "webpack --mode production",
     "dev": "webpack --mode development"
   },
@@ -13,7 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/zergote/intive-exercise.git"
   },
-  "keywords": ["react", "redux", "sagas", "sass"],
+  "keywords": [
+    "react",
+    "redux",
+    "sagas",
+    "sass"
+  ],
   "author": "Christian Yánez",
   "license": "MIT",
   "bugs": {
@@ -43,7 +47,9 @@
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "eslint": "^5.0.1",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
@@ -51,6 +57,7 @@
     "node-sass": "^4.9.1",
     "postcss-loader": "^2.1.5",
     "pre-commit": "^1.2.2",
+    "prettier": "^1.13.7",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
