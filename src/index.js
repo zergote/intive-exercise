@@ -1,13 +1,6 @@
 import './scss/main.scss';
 import React from 'react';
 import { render } from 'react-dom';
-
-const App = () => {
-  return (
-    <div>
-      <h3>Hello World</h3>
-    </div>
-  );
-};
+import App from './containers/App.jsx';
 
 render(<App />, document.getElementById('app'));
