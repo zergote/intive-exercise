@@ -11,12 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/zergote/intive-exercise.git"
   },
-  "keywords": [
-    "react",
-    "redux",
-    "sagas",
-    "sass"
-  ],
+  "keywords": ["react", "redux", "sagas", "sass"],
   "author": "Christian Yánez",
   "license": "MIT",
   "bugs": {

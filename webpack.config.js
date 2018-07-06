@@ -30,16 +30,15 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({
-      filename: "style.[chunkhash].css",
-      disable: false,
-      allChunks: true
+    new MiniCssExtractPlugin({
+      filename: "style.[contenthash].css"
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
       template: "./src/index.html",
       filename: "index.html"
-    })
+    }),
+    new WebpackMd5Hash()
   ]
 };
