@@ -21,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/zergote/intive-exercise/issues"
   },
-  "homepage": "https://github.com/zergote/intive-exercise#readme"
+  "homepage": "https://github.com/zergote/intive-exercise#readme",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
+  }
 }
