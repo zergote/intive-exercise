@@ -1,0 +1,25 @@
+{
+  "name": "intive-exercise",
+  "version": "1.0.0",
+  "description": "Intive - FDV Exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zergote/intive-exercise.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "sagas",
+    "sass"
+  ],
+  "author": "Christian Yánez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zergote/intive-exercise/issues"
+  },
+  "homepage": "https://github.com/zergote/intive-exercise#readme"
+}
