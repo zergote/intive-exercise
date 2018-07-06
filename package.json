@@ -4,9 +4,8 @@
   "description": "Intive - FDV Exercise",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server --mode development --open --history-api-fallback",
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development"
+    "start:dev": "cross-env NODE_ENV=development webpack-dev-server --hot --mode development --open --history-api-fallback",
+    "build": "cross-env NODE_ENV=production webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -41,6 +40,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^2.9.0",
@@ -54,6 +54,7 @@
     "postcss-loader": "^2.1.5",
     "prettier": "^1.13.7",
     "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
