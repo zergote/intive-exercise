@@ -25,6 +25,8 @@
   "homepage": "https://github.com/zergote/intive-exercise#readme",
   "dependencies": {
     "babel": "^6.23.0",
+    "formik": "^0.11.11",
+    "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
