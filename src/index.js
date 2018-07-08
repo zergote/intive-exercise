@@ -1,6 +1,5 @@
-import './scss/main.scss';
 import React from 'react';
 import { render } from 'react-dom';
-import App from './containers/App.jsx';
+import BirthdaysCollection from './containers/BirthdaysCollection/';
 
-render(<App />, document.getElementById('app'));
+render(<BirthdaysCollection />, document.getElementById('app'));
