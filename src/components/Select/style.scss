@@ -1,30 +1,43 @@
 select {
-  display: inline-block;
+  display: table-cell;
   background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
+  padding: 0.5rem;
   background-color:white;
   border-color: #3D80CC;
   background-repeat:no-repeat;
-  background-position: right 10px top 15px;
+  background-position: right 10px top 10px;
   background-size: 16px 16px;
-  padding:12px;
-  width:auto;
-  font-family:arial,tahoma;
+  width:100%;
   font-size:16px;
-  font-weight:bold;
-  color:black;
-  text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-radius:2px;
+  color: #3D80CC;
   appearance: none;
-  transition:0.3s ease all;
+  margin-bottom: 1.5em;
 }
-
-
-input[type=text] {
-  display: inline-block;
-  padding: 10px;
-  width: 250px;
-  background-color: #FFFFFF;
-  border-radius: 2px;
-  margin: 10px auto;
+.error {
+  border-color: red;
 }
-
+.label {
+  font-weight: bold;
+  margin-right: 20em;
+}
+.error .label {
+  color: red;
+}
+.input-feedback {
+  color: #999;
+}
+.error {
+  color: red;
+  margin-top: -1.5em;
+  line-height: 1.5;
+}
+p {
+  display: table-row;
+}
+label {
+  display: table-cell;
+}
+input {
+  display: table-cell;
+  margin-bottom: 1.5em;
+}

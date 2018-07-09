@@ -25,6 +25,17 @@ body {
   font-family:arial,tahoma;
   font-size: 20px;
   font-weight: 800;
+  margin-top: 1em;
+  height: 3em;
+}
+.autor {
+  color: #3d80cc;
+  font-family:arial,tahoma;
+  font-size: 20px;
+  float: right;
+  margin-right: 1.3em;
+  margin-top: .6em;
+  height: 3em;
 }
 .main-data-container {
   display: flex;
@@ -35,6 +46,7 @@ body {
   flex: 0 1 50%;
   height: 100%;
   max-width: 50%;
+  padding-left: 3rem;
 }
 .right-container {
   flex: 0 1 50%;

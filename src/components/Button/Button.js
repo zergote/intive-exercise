@@ -1,20 +1,15 @@
 import React from 'react';
+import './style.scss';
 
-var buttonStyle = {
-  margin: '10px 10px 10px 0'
-};
-
-let Button = nameButton => {
+/* eslint-disable */
+let Button = ({ disabled, type, name }) => {
   return (
-    <div>
-      <button
-        className="btn btn-default"
-        style={buttonStyle}
-        onClick={this.props.handleClick}
-      >
-        {nameButton}
+    <p>
+      <label />
+      <button type={type} disabled={disabled}>
+        {name}
       </button>
-    </div>
+    </p>
   );
 };
 

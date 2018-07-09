@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TextInput from '../../components/TextInput/';
-import Select from '../../components/Select/';
-import { withFormik } from 'formik';
+import Notification from '../../components/Notification';
+import PersonalDataForm from '../../components/PersonalDataForm';
+import Table from '../../components/Table';
 import moment from 'moment';
 import './style.scss';
 
@@ -11,27 +11,25 @@ class BirthdaysCollection extends Component {
   }
 
   render() {
-    console.log(this.validDate('10/02/2018')); // eslint-disable-line
     return (
       <div className="base-container-div">
         <div className="title-container">
-          <h3 className="title">Intive - FDV Exercise </h3>
+          <div className="title">Intive - FDV Exercise </div>
         </div>
         <div className="main-data-container">
           <div className="left-container">
-            <label>Name: </label>
-            <TextInput name="name here" />
-            <br />
-            <label>Surname: </label>
-            <TextInput name="name here" />
-            <br />
-            <label>Countries: </label>
-            <Select />
-            <br />
-            <label>Birthday: </label>
-            <TextInput name="mm/dd/yyyy" />
+            <PersonalDataForm value />
+            <Notification
+              name="Christian"
+              surname="Yánez"
+              country="Venezuela"
+              birthday="03/13/1987"
+            />
           </div>
-          <div className="right-container">Right</div>
+          <div className="right-container">
+            <Table />
+            <div className="autor">Christian Yánez</div>
+          </div>
         </div>
       </div>
     );

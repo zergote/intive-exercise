@@ -11,11 +11,11 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true
-    },
-    ecmaVersion: 2015,
-    sourceType: 'module'
+    }
   },
   plugins: ['react', 'prettier'],
   rules: {
