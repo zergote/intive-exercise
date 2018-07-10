@@ -1,0 +1,62 @@
+body {
+  background-color: #fcfcfc;
+}
+.base-container-div {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 841px;
+  height: 567px;
+  background-color: #eeeeee;
+  border-radius: 3px;
+}
+.title-container {
+  width: 841px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.title {
+  color: #3d80cc;
+  font-family:arial,tahoma;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 1em;
+  height: 3em;
+}
+.autor {
+  color: #3d80cc;
+  font-family:arial,tahoma;
+  font-size: 20px;
+  float: right;
+  margin-right: 1.3em;
+  margin-top: .6em;
+  height: 3em;
+}
+.main-data-container {
+  display: flex;
+  width: 100%;
+  height: 75%;
+}
+.left-container {
+  flex: 0 1 50%;
+  height: 100%;
+  max-width: 50%;
+  padding-left: 3rem;
+}
+.right-container {
+  flex: 0 1 50%;
+  height: 100%;
+  max-width: 50%;
+}
+label{
+  margin-left: 2em;
+  color: #3d80cc;
+ font-family:arial,tahoma;
+  font-size: 16px;
+  font-weight: 550;
+}

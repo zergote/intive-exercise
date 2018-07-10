@@ -1,0 +1,57 @@
+$header-height: 2rem;
+.table-container {
+    outline: 1px solid #3D80CC;
+    width: 100%;
+    height: 100%;
+    margin: 0em 2em 0em -2em;
+}
+.table {
+    position: relative;
+    padding-top: $header-height;
+    background-color: #EDEDED;
+}
+.scrollview {
+    height: 80%;
+    overflow: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+  border-bottom:1px solid #DDDDDD;
+  background: #EDEDED;
+  padding: .5rem;
+}
+th {
+    height: 0;
+    line-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: transparent;
+    border: none;
+    white-space: nowrap;
+}
+.th-name{
+    width: 40%;
+    border-bottom: 2px solid #DDDDDD;
+}
+.th-country{
+    width: 32%;
+    border-bottom: 2px solid #DDDDDD;
+}
+.th-birthday{
+    width: 32%;
+    border-bottom: 2px solid #DDDDDD;
+}
+th > div {
+    position: absolute;
+    top: 0;
+    color: #333333;
+    line-height: $header-height;
+}
+tr:hover td {
+  color: #333333;
+  background-color: white;
+  cursor: pointer;
+}
