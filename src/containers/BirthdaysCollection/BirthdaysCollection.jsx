@@ -37,7 +37,10 @@ class BirthdaysCollection extends Component {
             />
           </div>
           <div className="right-container">
-            <Table persons={persons} />
+            <Table
+              persons={persons}
+              getDerivateDataRequesting={this.props.getDerivateDataRequesting}
+            />
             <div className="autor">Christian Yánez</div>
           </div>
         </div>

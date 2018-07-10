@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 
 let Table = props => {
-  const { persons } = props;
+  const { persons, getDerivateDataRequesting } = props;
   return (
     <div className="table-container">
       <div className="table">
@@ -24,7 +24,10 @@ let Table = props => {
             <tbody>
               {persons.map((item, index) => {
                 return (
-                  <tr key={index} onClick={() => alert()}>
+                  <tr
+                    key={index}
+                    onClick={() => getDerivateDataRequesting(item)}
+                  >
                     <td>{item.name + ' ' + item.surname}</td>
                     <td>{item.country}</td>
                     <td>{item.birthday}</td>

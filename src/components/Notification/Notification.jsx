@@ -13,9 +13,11 @@ let Notification = props => {
     Number.parseInt(
       moment(currentPerson.birthday, 'MM/DD/YYYY').format('YYYY')
     );
+  /*
   setTimeout(() => {
     disableNotification()
-  }, 3000);
+  }, 20000);
+  */
   return (
     <div>
       {notificationState ? (
