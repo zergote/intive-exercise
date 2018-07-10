@@ -1,3 +1,3 @@
-import { PersonalDataForm } from './PersonalDataForm';
+import { PersonalDataForm } from './PersonalDataForm.jsx';
 
 export default PersonalDataForm;

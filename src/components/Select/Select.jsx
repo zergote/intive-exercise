@@ -23,24 +23,36 @@ let Select = ({
   value,
   onChange,
   className,
+  options,
   ...props
 }) => {
   const classes = classnames(
     'input-group',
     {
-      'error': !!error
+      error: !!error
     },
     className
   );
-
   return (
     <p className={classes}>
       <Label htmlFor={id} error={error}>
         {label}
       </Label>
-      <select id="blue">
+      <select
+        id={id}
+        className="select"
+        type={type}
+        value={value || "country"}
+        onChange={onChange}
+        {...props}
+      >
         <optgroup label="Select a country">
-          <option selected="selected">country</option>
+          <option value="country" disabled hidden>
+            country
+          </option>
+          {options.map((country, i) => (
+            <option key={i}>{country.substr(0, 21)}</option>
+          ))}
         </optgroup>
       </select>
       <InputFeedback error={error} />

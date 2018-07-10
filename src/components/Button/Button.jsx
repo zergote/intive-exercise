@@ -6,7 +6,7 @@ let Button = ({ disabled, type, name }) => {
   return (
     <p>
       <label />
-      <button type={type} disabled={disabled}>
+      <button type={type} disabled={disabled} >
         {name}
       </button>
     </p>

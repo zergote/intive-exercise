@@ -5,9 +5,14 @@ import Select from '../Select';
 import TextInput from '../TextInput';
 import Button from '../Button';
 import * as Yup from 'yup';
+import moment from 'moment';
 import './style.scss';
 
-const MyForm = props => {
+let validateDate = date => {
+  return moment(date, 'MM/DD/YYYY', true).isValid();
+};
+
+const Form = props => {
   const {
     values,
     touched,
@@ -15,9 +20,11 @@ const MyForm = props => {
     handleChange,
     handleBlur,
     handleSubmit,
-    isSubmitting
+    isSubmitting,
+    options,
+    getDerivateDataRequesting,
+    addAPerson
   } = props;
-  console.log(values);
   return (
     <form onSubmit={handleSubmit}>
       <TextInput
@@ -26,7 +33,7 @@ const MyForm = props => {
         label="Name: "
         placeholder="name"
         error={touched.name && errors.name}
-        value={values.name}
+        value={values.name || ''}
         onChange={handleChange}
         onBlur={handleBlur}
       />
@@ -36,15 +43,14 @@ const MyForm = props => {
         label="Surname: "
         placeholder="surname"
         error={touched.surname && errors.surname}
-        value={values.surname}
+        value={values.surname || ''}
         onChange={handleChange}
         onBlur={handleBlur}
       />
       <Select
         id="country"
-        type="text"
+        options={options}
         label="Country: "
-        placeholder="Selected your coutry"
         error={touched.country && errors.country}
         value={values.country}
         onChange={handleChange}
@@ -54,13 +60,13 @@ const MyForm = props => {
         id="birthday"
         type="text"
         label="Birthday: "
-        placeholder="Enter your birthday"
+        placeholder="mm/dd/yyyy"
         error={touched.birthday && errors.birthday}
-        value={values.birthday}
+        value={values.birthday || ''}
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      <Button type="submit" disabled={false} name="Save" />
+      <Button type="submit" disabled={isSubmitting} name="Save" />
     </form>
   );
 };
@@ -72,16 +78,24 @@ export const PersonalDataForm = withFormik({
     country: Yup.string().required('Country is required!'),
     birthday: Yup.string().required('Birthday is required!')
   }),
-  mapPropsToValues: user => ({
-    ...user
+  mapPropsToValues: values => ({
+    ...values
   }),
 
   handleSubmit: (values, { setSubmitting }) => {
-    const payload = { ...values };
-    setTimeout(() => {
-      alert(JSON.stringify(payload, null, 2));
-      setSubmitting(false);
-    }, 1000);
+    values.addAPerson(values);
+    values.getDerivateDataRequesting(values);
+    if (validateDate(values.birthday)) {
+      const payload = { ...values };
+      setTimeout(() => {
+        setSubmitting(false);
+      }, 1000);
+    } else {
+      alert('Incorrect date. Follow this format mm/dd/yyyy');
+      setTimeout(() => {
+        setSubmitting(false);
+      }, 500);
+    }
   },
-  displayName: 'MyForm'
-})(MyForm);
+  displayName: 'Form'
+})(Form);

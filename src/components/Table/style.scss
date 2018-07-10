@@ -50,3 +50,8 @@ th > div {
     color: #333333;
     line-height: $header-height;
 }
+tr:hover td {
+  color: #333333;
+  background-color: white;
+  cursor: pointer;
+}
