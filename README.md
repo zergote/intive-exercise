@@ -24,7 +24,7 @@ Extra points if:
 - [x] The data has to be persistent on localStorage
 - [x] Have to have Flux / Use Redux Thunk or something similar
 - [x] Coding Standard is required (ES6 / Eslint)
-- [x]Sass is required
+- [x] Sass is required
 - [x] Points extra if it has configured bundle builder like webpack
 
 ## License
