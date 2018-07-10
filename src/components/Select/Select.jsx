@@ -48,7 +48,7 @@ let Select = ({
             country
           </option>
           {options.map((country, i) => (
-            <option key={i}>{country.substr(0, 21)}</option>
+            <option key={i}>{country.substr(0, 20)}</option>
           ))}
         </optgroup>
       </select>
