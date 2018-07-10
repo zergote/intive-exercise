@@ -17,7 +17,7 @@ Extra points if:
 - If it's Sass / less
 
 ## Mockup
- ![Mockup](https://github.com/zergote/intive-exercise/blob/master/docs/Diagrams/Architecture%20Class%20Diagram.png "Mockup")
+ ![Mockup](https://github.com/zergote/intive-exercise/blob/master/docs/pasted%20image%200.png "Mockup")
 ## Aditional
 - It has to have React Js
 - The data has to be persistent on localStorage
