@@ -22,6 +22,9 @@ class BirthdaysCollection extends Component {
     this.props.loadPersonsRequesting();
   }
 
+  handleSavePersonsLocalStorage() {
+    this.props.savePersonsRequesting(this.props.persons);
+  }
   render() {
     const { countries, notificationState, currentPerson, persons } = this.props;
     return (
@@ -35,8 +38,9 @@ class BirthdaysCollection extends Component {
               options={countries}
               getDerivateDataRequesting={this.props.getDerivateDataRequesting}
               addAPerson={this.props.addAPerson}
-              savePersonsRequesting={this.props.savePersonsRequesting}
-              persons={persons}
+              handleSavePersonsLocalStorage={this.handleSavePersonsLocalStorage.bind(
+                this
+              )}
             />
             <Notification
               notificationState={notificationState}

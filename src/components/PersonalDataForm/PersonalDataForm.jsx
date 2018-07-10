@@ -24,8 +24,7 @@ const Form = props => {
     options,
     getDerivateDataRequesting,
     addAPerson,
-    persons,
-    savePersonsRequesting
+    handleSavePersonsLocalStorage
   } = props;
   return (
     <form onSubmit={handleSubmit}>
@@ -69,13 +68,7 @@ const Form = props => {
         onBlur={handleBlur}
       />
 
-      <Button
-        type="submit"
-        disabled={isSubmitting}
-        name="Save"
-        persons={persons}
-        savePersonsRequesting={savePersonsRequesting}
-      />
+      <Button type="submit" disabled={isSubmitting} name="Save" />
     </form>
   );
 };
@@ -91,8 +84,7 @@ Form.propTypes = {
   options: PropTypes.array.isRequired,
   getDerivateDataRequesting: PropTypes.func,
   addAPerson: PropTypes.func.isRequired,
-  persons: PropTypes.array.isRequired,
-  savePersonsRequesting: PropTypes.func.isRequired
+  handleSavePersonsLocalStorage: PropTypes.func.isRequired
 };
 
 export const PersonalDataForm = withFormik({
@@ -109,16 +101,16 @@ export const PersonalDataForm = withFormik({
   handleSubmit: (values, { setSubmitting }) => {
     if (validateDate(values.birthday)) {
       values.addAPerson(values);
+      values.handleSavePersonsLocalStorage();
       values.getDerivateDataRequesting(values);
-      const payload = { ...values };
       setTimeout(() => {
         setSubmitting(false);
-      }, 1000);
+      }, 600);
     } else {
       alert('Incorrect date. Follow this format mm/dd/yyyy');
       setTimeout(() => {
         setSubmitting(false);
-      }, 500);
+      }, 400);
     }
   },
   displayName: 'Form'

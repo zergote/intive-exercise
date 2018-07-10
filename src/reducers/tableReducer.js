@@ -1,14 +1,7 @@
 import { ADD_A_PERSON, LOAD_PERSONS_LS_SUCCESS } from '../actionTypes';
 
 const initialState = {
-  persons: [
-    {
-      name: 'Christian',
-      surname: 'Yanez',
-      country: 'Venezuela',
-      birthday: '02/02/1998'
-    }
-  ]
+  persons: []
 };
 
 export default function(state = initialState, action) {
