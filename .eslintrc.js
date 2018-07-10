@@ -10,6 +10,7 @@ module.exports = {
     'prettier',
     'plugin:prettier/recommended'
   ],
+  parser: "babel-eslint",
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -19,6 +20,11 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
+    "react/jsx-filename-extension": [1, { "extensions": [".js",".jsx"] }],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
     indent: ['error', 2],
     'linebreak-style': ['error', 'windows'],
     quotes: ['error', 'single'],

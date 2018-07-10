@@ -4,16 +4,22 @@ import {
   getDerivateDataRequesting,
   disableNotification
 } from '../../actions/notificationActions';
-import { addAPerson } from '../../actions/tableActions';
+import {
+  addAPerson,
+  savePersonsRequesting,
+  loadPersonsRequesting
+} from '../../actions/tableActions';
 import { connect } from 'react-redux';
 import Notification from '../../components/Notification';
 import PersonalDataForm from '../../components/PersonalDataForm';
 import Table from '../../components/Table';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 class BirthdaysCollection extends Component {
   componentDidMount() {
     this.props.getCountriesRequesting();
+    this.props.loadPersonsRequesting();
   }
 
   render() {
@@ -29,6 +35,8 @@ class BirthdaysCollection extends Component {
               options={countries}
               getDerivateDataRequesting={this.props.getDerivateDataRequesting}
               addAPerson={this.props.addAPerson}
+              savePersonsRequesting={this.props.savePersonsRequesting}
+              persons={persons}
             />
             <Notification
               notificationState={notificationState}
@@ -71,6 +79,12 @@ const mapDispatchToProps = dispatch => {
     },
     addAPerson: value => {
       dispatch(addAPerson(value));
+    },
+    savePersonsRequesting: value => {
+      dispatch(savePersonsRequesting(value));
+    },
+    loadPersonsRequesting: () => {
+      dispatch(loadPersonsRequesting());
     }
   };
 };
@@ -79,3 +93,16 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(BirthdaysCollection);
+
+BirthdaysCollection.propTypes = {
+  countries: PropTypes.array.isRequired,
+  notificationState: PropTypes.bool.isRequired,
+  currentPerson: PropTypes.object.isRequired,
+  persons: PropTypes.array.isRequired,
+  getCountriesRequesting: PropTypes.func.isRequired,
+  getDerivateDataRequesting: PropTypes.func.isRequired,
+  disableNotification: PropTypes.func.isRequired,
+  addAPerson: PropTypes.func.isRequired,
+  savePersonsRequesting: PropTypes.func.isRequired,
+  loadPersonsRequesting: PropTypes.func.isRequired
+};

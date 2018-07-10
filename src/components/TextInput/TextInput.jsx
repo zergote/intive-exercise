@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './style.scss';
 
-/* eslint-disable */
 const InputFeedback = ({ error }) =>
   error ? <div className="input-feedback">{error}</div> : null;
 
@@ -51,8 +50,24 @@ const TextInput = ({
   );
 };
 
+InputFeedback.propTypes = {
+  error: PropTypes.object
+};
+
+Label.propTypes = {
+  error: PropTypes.object,
+  className: PropTypes.object,
+  children: PropTypes.string.isRequired
+};
+
 TextInput.propTypes = {
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  error: PropTypes.object,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  className: PropTypes.string
 };
 
 export default TextInput;

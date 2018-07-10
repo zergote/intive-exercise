@@ -23,7 +23,9 @@ const Form = props => {
     isSubmitting,
     options,
     getDerivateDataRequesting,
-    addAPerson
+    addAPerson,
+    persons,
+    savePersonsRequesting
   } = props;
   return (
     <form onSubmit={handleSubmit}>
@@ -66,7 +68,14 @@ const Form = props => {
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      <Button type="submit" disabled={isSubmitting} name="Save" />
+
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        name="Save"
+        persons={persons}
+        savePersonsRequesting={savePersonsRequesting}
+      />
     </form>
   );
 };

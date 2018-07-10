@@ -6,17 +6,16 @@ import {
   LOAD_PERSONS_LS_SUCCESS,
   LOAD_PERSONS_LS_ERROR
 } from '../actionTypes';
-
 import { takeLatest, call, put } from 'redux-saga/effects';
-import { delay } from 'redux-saga';
 
+// Functions for localstorage management
 function loadPersons(key) {
   let ls = {};
   if (global.localStorage) {
     try {
       ls = JSON.parse(global.localStorage.getItem('rgl-5')) || false;
     } catch (e) {
-      /*Ignore*/
+      throw e;
     }
   }
   if (ls) {
@@ -26,12 +25,12 @@ function loadPersons(key) {
   }
 }
 
-function savePersonsToLS(key, value) {
+function savePersonsToLS(key, values) {
   if (global.localStorage) {
     global.localStorage.setItem(
       'rgl-5',
       JSON.stringify({
-        [key]: value
+        [key]: values
       })
     );
   }
@@ -39,39 +38,37 @@ function savePersonsToLS(key, value) {
 
 function* savePersonsFlow(action) {
   try {
-    const { key, value } = action;
-    // Empuja la "llamada" a nuestro signupApi con el correo electrónico y la contraseña
-    // contenida en la acción, luego se envia y se PAUSA aquí hasta que la función API
-    // asyncronica sea completada!
-    const response = yield call(savePersonsToLS, key, value);
-
+    const { values } = action;
+    // key to organize how data is saved and retrieved
+    const key = 'personsList';
+    const response = yield call(savePersonsToLS, key, values);
+    // It is sent by reducing the action of success with the list of countries
     if (response) {
       yield put({ type: SAVE_PERSONS_LS_SUCCESS, response });
     }
   } catch (error) {
-    // Si la llamada a la API para el registro falla, se despachara SIGNUP_ERROR junto con el mensaje de error
+    // Error responses are issued but not assigned an action
     yield put({ type: SAVE_PERSONS_LS_ERROR, error });
   }
 }
 
-function* loadPersonsFlow(action) {
+// Flow to manage the load of the list of people and send them to the reducer
+function* loadPersonsFlow() {
   try {
-    const { key } = action;
-    // Empuja la "llamada" a nuestro signupApi con el correo electrónico y la contraseña
-    // contenida en la acción, luego se envia y se PAUSA aquí hasta que la función API
-    // asyncronica sea completada!
+    // key to organize how data is saved and retrieved
+    const key = 'personsList';
     const response = yield call(loadPersons, key);
-
+    // It is sent by reducing the action of success with the list of persons
     if (response) {
       yield put({ type: LOAD_PERSONS_LS_SUCCESS, response });
     }
   } catch (error) {
-    // Si la llamada a la API para el registro falla, se despachara SIGNUP_ERROR junto con el mensaje de error
+    // Error responses are issued but not assigned an action
     yield put({ type: LOAD_PERSONS_LS_ERROR, error });
   }
 }
 
-// Nuestra Watchers de la saga estaran pendiente de la solicitud de ejecutar procesos
+// watch for required action
 function* saveWatcher() {
   yield takeLatest(SAVE_PERSONS_LS_REQUESTING, savePersonsFlow);
 }

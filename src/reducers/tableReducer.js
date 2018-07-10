@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
       return { ...state, persons: updatePersons };
 
     case LOAD_PERSONS_LS_SUCCESS:
-      return { ...state, persons: action.persons };
+      return { ...state, persons: action.response };
     default:
       return state;
   }
