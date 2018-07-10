@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './style.scss';
-/* eslint-disable */
 
 const InputFeedback = ({ error }) =>
-  error ? <div className="input-feedback">{error}</div> : null;
+  error ? <span className="input-feedback">{error}</span> : null;
 
 const Label = ({ error, className, children, ...props }) => {
   return (
@@ -16,7 +15,6 @@ const Label = ({ error, className, children, ...props }) => {
 };
 
 let Select = ({
-  type,
   id,
   label,
   error,
@@ -41,8 +39,7 @@ let Select = ({
       <select
         id={id}
         className="select"
-        type={type}
-        value={value || "country"}
+        value={value || 'country'}
         onChange={onChange}
         {...props}
       >
@@ -58,6 +55,26 @@ let Select = ({
       <InputFeedback error={error} />
     </p>
   );
+};
+
+InputFeedback.propTypes = {
+  error: PropTypes.string
+};
+
+Label.propTypes = {
+  error: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.string
+};
+
+Select.propTypes = {
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  error: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  className: PropTypes.string,
+  options: PropTypes.array.isRequired
 };
 
 export default Select;

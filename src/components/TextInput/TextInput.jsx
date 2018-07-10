@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import './style.scss';
 
 const InputFeedback = ({ error }) =>
-  error ? <div className="input-feedback">{error}</div> : null;
+  error ? <span className="input-feedback">{error}</span> : null;
 
 const Label = ({ error, className, children, ...props }) => {
   return (
@@ -51,20 +51,20 @@ const TextInput = ({
 };
 
 InputFeedback.propTypes = {
-  error: PropTypes.object
+  error: PropTypes.string
 };
 
 Label.propTypes = {
-  error: PropTypes.object,
-  className: PropTypes.object,
-  children: PropTypes.string.isRequired
+  error: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.string
 };
 
 TextInput.propTypes = {
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  error: PropTypes.object,
+  error: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   className: PropTypes.string

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import './style.scss';
-/* eslint-disable */
 
 let Notification = props => {
   const { notificationState, currentPerson, disableNotification } = props;
@@ -30,4 +29,9 @@ let Notification = props => {
   );
 };
 
+Notification.propTypes = {
+  notificationState: PropTypes.bool.isRequired,
+  currentPerson: PropTypes.object,
+  disableNotification: PropTypes.func.isRequired
+};
 export default Notification;

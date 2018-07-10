@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { withFormik } from 'formik';
 import Select from '../Select';
@@ -6,6 +5,7 @@ import TextInput from '../TextInput';
 import Button from '../Button';
 import * as Yup from 'yup';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 let validateDate = date => {
@@ -80,6 +80,21 @@ const Form = props => {
   );
 };
 
+Form.propTypes = {
+  values: PropTypes.object.isRequired,
+  touched: PropTypes.object,
+  errors: PropTypes.object,
+  handleChange: PropTypes.func,
+  handleBlur: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  isSubmitting: PropTypes.bool,
+  options: PropTypes.array.isRequired,
+  getDerivateDataRequesting: PropTypes.func,
+  addAPerson: PropTypes.func.isRequired,
+  persons: PropTypes.array.isRequired,
+  savePersonsRequesting: PropTypes.func.isRequired
+};
+
 export const PersonalDataForm = withFormik({
   validationSchema: Yup.object().shape({
     name: Yup.string().required('Name is required!'),
@@ -92,9 +107,9 @@ export const PersonalDataForm = withFormik({
   }),
 
   handleSubmit: (values, { setSubmitting }) => {
-    values.addAPerson(values);
-    values.getDerivateDataRequesting(values);
     if (validateDate(values.birthday)) {
+      values.addAPerson(values);
+      values.getDerivateDataRequesting(values);
       const payload = { ...values };
       setTimeout(() => {
         setSubmitting(false);

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 let Table = props => {
@@ -40,6 +41,11 @@ let Table = props => {
       </div>
     </div>
   );
+};
+
+Table.propTypes = {
+  persons: PropTypes.array.isRequired,
+  getDerivateDataRequesting: PropTypes.func.isRequired
 };
 
 export default Table;
